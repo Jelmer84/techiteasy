@@ -162,44 +162,66 @@ const inventory = [
   },
 ];
 
-
+// 1a =================================================================
 const  arrayTvsStillToSell = inventory.map((inventory) => {
-  return inventory.originalStock - inventory.sold
+  return inventory.originalStock - inventory.sold;
 })
 const tvsStillToSell = arrayTvsStillToSell.reduce (function (total, value) {
-  return total + value
+  return total + value;
 });
-// console.log(tvsStillToSell)
+console.log(tvsStillToSell);
 
+// 1b =================================================================
 const numbertoSell = document.getElementById("numberStillToSell")
-numbertoSell.textContent = tvsStillToSell
+numbertoSell.textContent = tvsStillToSell;
 
-// Opdracht 2a: Gebruik een array-methode om een array te maken met alle tv-type namen.
-// MAP -> [{}, {}, {}] -> ['fancy samsung', 'fancier samsung', 'lg big screen']
-// - [ ] maak variabele voor de uitkomst
-// - [ ] inventory.map()
-// - [ ] geef een functie aan map als argument
-// - [ ] voeg de parameter toe (televisie, product)
-// - [ ] zoeken naar de juiste property
-// - [ ] return de juiste property
-// - [ ] log het resultaat
+// 2a =================================================================
+const arrayOfTV = inventory.map (function (television) {
+  return `${television.brand} ${television.name}`;
+})
+console.log(arrayOfTV);
 
-// Opdracht 2b: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn.
-// FILTER -> [{}, {}, {}, {}] -> [{}, {}]
-// - [ ] maak variabele voor de uitkomst
-// - [ ] inventory.filter()
-// - [ ] geef een functie aan map als argument
-// - [ ] voeg de parameter toe (televisie, product)
-// - [ ] zoeken naar de juiste property
-// - [ ] check: is de televisie uitverkocht? true of false
-// - [ ] return true of false
-// - [ ] log het resultaat
+// 2b =================================================================
+const soldOutTvs = inventory.filter (function (televison) {
+  return (televison.originalStock === televison.sold)
+})
+console.log(soldOutTvs);
 
-// Opdracht 2c: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken.
-// FILTER -> [{}, {}, {}, {}] -> [{}, {}]
+// 2c =================================================================
+const tvWithAmbiLight = inventory.filter(function (television) {
+  return television.options.ambiLight.valueOf(true);
+})
+console.log(tvWithAmbiLight);
 
-// Opdracht 2d: Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert.
-// SORT
+// 2d =================================================================
+const tvsInOrderOfPrice = inventory.sort(function (televisionA, televisionB) {
+  return televisionA.price - televisionB.price;
+})
+console.log(tvsInOrderOfPrice);
+
+// 3a =================================================================
+const  arrayRevenueTarget = inventory.map((inventory) => {
+  return inventory.originalStock * inventory.price;
+})
+const revenueTarget = arrayRevenueTarget.reduce (function (total, value) {
+  return total + value;
+});
+console.log(revenueTarget);
+
+const targetRevenue = document.getElementById("revenueTarget")
+targetRevenue.textContent = "€ " + revenueTarget
+
+// 3b =================================================================
+const  arrayRevenueMade = inventory.map((inventory) => {
+  return inventory.sold * inventory.price;
+})
+const revenueMade = arrayRevenueMade.reduce (function (total, value) {
+  return total + value;
+});
+console.log(revenueMade);
+
+const madeRevenue = document.getElementById("revenue")
+madeRevenue.textContent = "€ " + revenueMade
 
 // 3 ==============================================================================================
 // Opdracht 3a: Wat is onze doel-opbrengst?
