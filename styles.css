@@ -19,3 +19,8 @@ p {
 #revenue {
     color: green;
 }
+
+#forSale {
+    font-style: italic;
+    color: chartreuse;
+}

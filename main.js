@@ -223,6 +223,63 @@ console.log(revenueMade);
 const madeRevenue = document.getElementById("revenue")
 madeRevenue.textContent = "€ " + revenueMade
 
+// 4 ==================================================================
+function diplayProducts (product) {
+  const tvDisplay = document.createElement ("li");
+  tvDisplay.setAttribute("class", "classListOfTvs")
+  const tvType = product.type
+  tvDisplay.textContent = tvType
+
+  const list = document.getElementById("listOfTvs")
+  list.appendChild(tvDisplay)
+}
+
+for (let index = 0; index < 2; index++) {
+  const product = inventory[index]
+  diplayProducts(product)
+}
+
+// 5a =================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 8 ==================================================================
+// Alle 8 Tv's'
+// function diplayProducts (product) {
+//   const tvDisplay = document.createElement ("li");
+//   tvDisplay.setAttribute("class", "classListOfTvs")
+//   const tvType = product.type
+//   tvDisplay.textContent = tvType
+//
+//   const list = document.getElementById("listOfTvs")
+//   list.appendChild(tvDisplay)
+// }
+//
+// for (let index = 0; index < inventory.length ; index++) {
+//   const product = inventory[index]
+//   diplayProducts(product)
+// }
+
+
+
+
+
+
 // 3 ==============================================================================================
 // Opdracht 3a: Wat is onze doel-opbrengst?
 // Bereken wat de totale opbrengst is, als we
