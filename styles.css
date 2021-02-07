@@ -1,0 +1,21 @@
+h1 {
+    color: coral;
+    font-style: italic;
+}
+
+p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#numberStillToSell {
+    color: red;
+}
+
+#revenueTarget {
+    color: blue;
+}
+
+#revenue {
+    color: green;
+}

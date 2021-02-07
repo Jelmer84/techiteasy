@@ -161,3 +161,77 @@ const inventory = [
     sold: 8,
   },
 ];
+
+
+const  arrayTvsStillToSell = inventory.map((inventory) => {
+  return inventory.originalStock - inventory.sold
+})
+const tvsStillToSell = arrayTvsStillToSell.reduce (function (total, value) {
+  return total + value
+});
+// console.log(tvsStillToSell)
+
+const numbertoSell = document.getElementById("numberStillToSell")
+numbertoSell.textContent = tvsStillToSell
+
+// Opdracht 2a: Gebruik een array-methode om een array te maken met alle tv-type namen.
+// MAP -> [{}, {}, {}] -> ['fancy samsung', 'fancier samsung', 'lg big screen']
+// - [ ] maak variabele voor de uitkomst
+// - [ ] inventory.map()
+// - [ ] geef een functie aan map als argument
+// - [ ] voeg de parameter toe (televisie, product)
+// - [ ] zoeken naar de juiste property
+// - [ ] return de juiste property
+// - [ ] log het resultaat
+
+// Opdracht 2b: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn.
+// FILTER -> [{}, {}, {}, {}] -> [{}, {}]
+// - [ ] maak variabele voor de uitkomst
+// - [ ] inventory.filter()
+// - [ ] geef een functie aan map als argument
+// - [ ] voeg de parameter toe (televisie, product)
+// - [ ] zoeken naar de juiste property
+// - [ ] check: is de televisie uitverkocht? true of false
+// - [ ] return true of false
+// - [ ] log het resultaat
+
+// Opdracht 2c: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken.
+// FILTER -> [{}, {}, {}, {}] -> [{}, {}]
+
+// Opdracht 2d: Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert.
+// SORT
+
+// 3 ==============================================================================================
+// Opdracht 3a: Wat is onze doel-opbrengst?
+// Bereken wat de totale opbrengst is, als we
+// alle exemplaren van ieder type zouden verkopen.
+// Geef dit in het blauw weer op de pagina.
+
+// STRATEGIE:
+// MAYBE (tussenstap): MAP [{}, {}, {}, {}, {}, {}, {}, {}] -> [8717, 636, (nog 6 uitkomsten)]
+// NOPE: FIND [{}, {}, {}, {}] -> {}
+// NOPE: FILTER (we moeten alles doen, dus geen filter nodig)
+// NOPE: SORT (volgorde)
+// Iets anders (loop)
+
+// 1. MAP -> LOOP
+// - MAP -> [8717, 636, (nog 6 uitkomsten)]
+// - LOOP [8717, 636, (nog 6 uitkomsten)] -> eindbedrag
+
+// 2. 1 x LOOPEN
+// - counter (totaalbedrag)
+// - LOOP
+// - Voor elke type: originalStock * price
+// - optellen bij het totaal bedrag
+
+// VOOR DE TODOLIST: check opdracht 1 (lijkt heel erg)
+
+// OP DE PAGINA ZETTEN:
+
+// - Zelfde als 1B
+// - [ ] element maken (html)
+// - [ ] id moeten voegen (html)
+// - [ ] Het element selecteren (variabele / getElementById)
+// - [ ] De content veranderen (.textContent)
+// - [ ] Kleurtje geven (CSS)
+
