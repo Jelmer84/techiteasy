@@ -240,7 +240,29 @@ for (let index = 0; index < 2; index++) {
 }
 
 // 5a =================================================================
+function tvNameString (tv) {
+  const tvDisplay = document.createElement ("li");
+  tvDisplay.setAttribute("class", "classListOfTvOne")
+  const tvTypeOne = `${tv.brand} ${tv.type} - ${tv.name}`
+  tvDisplay.textContent = tvTypeOne
 
+  const list = document.getElementById("listOfTvOne")
+  list.appendChild(tvDisplay)
+}
+
+for (let index = 0; index < inventory.length ; index++) {
+  const product = inventory[index]
+  tvNameString(product)
+}
+
+
+
+
+
+// const tvName = inventory.map(function (tv) {
+//   return `${tv.brand} ${tv.type} - ${tv.name}`
+// })
+// console.log(tvName)
 
 
 

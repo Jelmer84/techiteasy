@@ -20,7 +20,8 @@ p {
     color: green;
 }
 
-#forSale {
+.assignmentTitle {
     font-style: italic;
-    color: chartreuse;
+    color: turquoise;
 }
+
